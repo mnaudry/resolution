@@ -1,6 +1,7 @@
 <?php
 $calculateTotalPrice = function(array $prices, $discount) {
 
+    
     $price_discount = max($prices);
 
     $total_price = 0 ;
@@ -10,6 +11,7 @@ $calculateTotalPrice = function(array $prices, $discount) {
         $tmp_price = $price ;
         if(!$find && $tmp_price == $price_discount) {
             $tmp_price  = $price - (($tmp_price * $discount) / 100);
+            $find = true ;
         }
 
         $total_price += $tmp_price;
